@@ -6,6 +6,7 @@
       "size" : "20x20"
     },
     {
+      "filename" : "IMG_4652_1_60x60.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
@@ -16,6 +17,7 @@
       "size" : "29x29"
     },
     {
+      "filename" : "IMG_4652_2_87x87.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
@@ -26,6 +28,7 @@
       "size" : "40x40"
     },
     {
+      "filename" : "IMG_4652_3_120x120.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
@@ -36,6 +39,7 @@
       "size" : "60x60"
     },
     {
+      "filename" : "IMG_4652_4_180x180.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
@@ -86,6 +90,7 @@
       "size" : "83.5x83.5"
     },
     {
+      "filename" : "appLogoCAC.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
