@@ -16,7 +16,7 @@
 		1374EDD32A7057E4003A2C6F /* CarbonTrackrOfficialUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1374EDD22A7057E4003A2C6F /* CarbonTrackrOfficialUITestsLaunchTests.swift */; };
 		1D3A709C8A5B6A8E710DA4E8 /* Pods_CarbonTrackrOfficialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83280C77D45DCA5286103C06 /* Pods_CarbonTrackrOfficialTests.framework */; };
 		2F0839938B0B5A1909B70299 /* Pods_CarbonTrackrOfficial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338F72630DFD212772D70FB6 /* Pods_CarbonTrackrOfficial.framework */; };
-		8D54368F2A705D1C00C900EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D54368E2A705D1C00C900EB /* LaunchScreen.storyboard */; };
+		8D2772B92A7AC4D80013FE6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */; };
 		8D9D01512A73311800223224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D9D01502A73311800223224 /* Main.storyboard */; };
 		8D9D01552A73315000223224 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D01542A73315000223224 /* ViewController.swift */; };
 		8D9D01572A73316600223224 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D01562A73316600223224 /* LogInView.swift */; };
@@ -55,7 +55,7 @@
 		61ECBA6B61F4DC24C9111DD4 /* Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests.release.xcconfig"; path = "Target Support Files/Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests/Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests.release.xcconfig"; sourceTree = "<group>"; };
 		769AA25FD40D4FA0D888CDFC /* Pods-CarbonTrackrOfficialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarbonTrackrOfficialTests.debug.xcconfig"; path = "Target Support Files/Pods-CarbonTrackrOfficialTests/Pods-CarbonTrackrOfficialTests.debug.xcconfig"; sourceTree = "<group>"; };
 		83280C77D45DCA5286103C06 /* Pods_CarbonTrackrOfficialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarbonTrackrOfficialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D54368E2A705D1C00C900EB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D9D01502A73311800223224 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../../Desktop/Xcode Project/test/test/Main.storyboard"; sourceTree = "<group>"; };
 		8D9D01542A73315000223224 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D9D01562A73316600223224 /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 				8D9D01542A73315000223224 /* ViewController.swift */,
 				8D9D01562A73316600223224 /* LogInView.swift */,
 				8D9D01502A73311800223224 /* Main.storyboard */,
+				8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */,
 				1374EDB82A7057E4003A2C6F /* Assets.xcassets */,
-				8D54368E2A705D1C00C900EB /* LaunchScreen.storyboard */,
 				1374EDBD2A7057E4003A2C6F /* Info.plist */,
 				8DFAB3422A761E8E00C6FBFA /* GoogleService-Info.plist */,
 			);
@@ -282,8 +282,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D54368F2A705D1C00C900EB /* LaunchScreen.storyboard in Resources */,
 				8DFAB3432A761E8E00C6FBFA /* GoogleService-Info.plist in Resources */,
+				8D2772B92A7AC4D80013FE6D /* LaunchScreen.storyboard in Resources */,
 				1374EDB92A7057E4003A2C6F /* Assets.xcassets in Resources */,
 				8D9D01512A73311800223224 /* Main.storyboard in Resources */,
 			);
