@@ -7,20 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		092C3EE8D2CD524CA6B6F1D6 /* Pods_CarbonTrackrOfficial_CarbonTrackrOfficialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60C05FCA64CC4813E6B0F84 /* Pods_CarbonTrackrOfficial_CarbonTrackrOfficialUITests.framework */; };
 		1374EDB02A7057E2003A2C6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1374EDAF2A7057E2003A2C6F /* AppDelegate.swift */; };
 		1374EDB22A7057E2003A2C6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1374EDB12A7057E2003A2C6F /* SceneDelegate.swift */; };
 		1374EDB92A7057E4003A2C6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1374EDB82A7057E4003A2C6F /* Assets.xcassets */; };
 		1374EDC72A7057E4003A2C6F /* CarbonTrackrOfficialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1374EDC62A7057E4003A2C6F /* CarbonTrackrOfficialTests.swift */; };
 		1374EDD12A7057E4003A2C6F /* CarbonTrackrOfficialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1374EDD02A7057E4003A2C6F /* CarbonTrackrOfficialUITests.swift */; };
 		1374EDD32A7057E4003A2C6F /* CarbonTrackrOfficialUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1374EDD22A7057E4003A2C6F /* CarbonTrackrOfficialUITestsLaunchTests.swift */; };
-		1D3A709C8A5B6A8E710DA4E8 /* Pods_CarbonTrackrOfficialTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83280C77D45DCA5286103C06 /* Pods_CarbonTrackrOfficialTests.framework */; };
-		2F0839938B0B5A1909B70299 /* Pods_CarbonTrackrOfficial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338F72630DFD212772D70FB6 /* Pods_CarbonTrackrOfficial.framework */; };
 		8D2772B92A7AC4D80013FE6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */; };
+		8D3E5C212A7E0C7500E466E4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8D3E5C202A7E0C7500E466E4 /* GoogleService-Info.plist */; };
+		8D3E5C242A7E0FBA00E466E4 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C232A7E0FBA00E466E4 /* FirebaseAnalytics */; };
+		8D3E5C262A7E0FBA00E466E4 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C252A7E0FBA00E466E4 /* FirebaseAnalyticsSwift */; };
+		8D3E5C292A7E1C9300E466E4 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C282A7E1C9300E466E4 /* GoogleSignIn */; };
+		8D3E5C2B2A7E1C9300E466E4 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C2A2A7E1C9300E466E4 /* GoogleSignInSwift */; };
+		8D3E5C2E2A7E21C300E466E4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C2D2A7E21C300E466E4 /* FirebaseAuth */; };
+		8D3E5C302A7E258C00E466E4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C2F2A7E258C00E466E4 /* FirebaseDatabase */; };
+		8D3E5C322A7EB57600E466E4 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C312A7EB57600E466E4 /* FirebaseFirestoreSwift */; };
+		8D3E5C342A7EB57B00E466E4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C332A7EB57B00E466E4 /* FirebaseFirestore */; };
+		8D5716BD2A81F6390086722D /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5716BC2A81F6390086722D /* CreateAccount.swift */; };
 		8D9D01512A73311800223224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D9D01502A73311800223224 /* Main.storyboard */; };
 		8D9D01552A73315000223224 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D01542A73315000223224 /* ViewController.swift */; };
 		8D9D01572A73316600223224 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D01562A73316600223224 /* LogInView.swift */; };
-		8DFAB3432A761E8E00C6FBFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DFAB3422A761E8E00C6FBFA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,20 +57,12 @@
 		1374EDCC2A7057E4003A2C6F /* CarbonTrackrOfficialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarbonTrackrOfficialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1374EDD02A7057E4003A2C6F /* CarbonTrackrOfficialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonTrackrOfficialUITests.swift; sourceTree = "<group>"; };
 		1374EDD22A7057E4003A2C6F /* CarbonTrackrOfficialUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonTrackrOfficialUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		338F72630DFD212772D70FB6 /* Pods_CarbonTrackrOfficial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarbonTrackrOfficial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		61ECBA6B61F4DC24C9111DD4 /* Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests.release.xcconfig"; path = "Target Support Files/Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests/Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests.release.xcconfig"; sourceTree = "<group>"; };
-		769AA25FD40D4FA0D888CDFC /* Pods-CarbonTrackrOfficialTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarbonTrackrOfficialTests.debug.xcconfig"; path = "Target Support Files/Pods-CarbonTrackrOfficialTests/Pods-CarbonTrackrOfficialTests.debug.xcconfig"; sourceTree = "<group>"; };
-		83280C77D45DCA5286103C06 /* Pods_CarbonTrackrOfficialTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarbonTrackrOfficialTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8D3E5C202A7E0C7500E466E4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8D5716BC2A81F6390086722D /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		8D9D01502A73311800223224 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../../Desktop/Xcode Project/test/test/Main.storyboard"; sourceTree = "<group>"; };
 		8D9D01542A73315000223224 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D9D01562A73316600223224 /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
-		8DFAB3422A761E8E00C6FBFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		927F7F3CBC51CCB5B3F56961 /* Pods-CarbonTrackrOfficial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarbonTrackrOfficial.debug.xcconfig"; path = "Target Support Files/Pods-CarbonTrackrOfficial/Pods-CarbonTrackrOfficial.debug.xcconfig"; sourceTree = "<group>"; };
-		C60C05FCA64CC4813E6B0F84 /* Pods_CarbonTrackrOfficial_CarbonTrackrOfficialUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarbonTrackrOfficial_CarbonTrackrOfficialUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8AFA9721CD6C5E38A079BFF /* Pods-CarbonTrackrOfficialTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarbonTrackrOfficialTests.release.xcconfig"; path = "Target Support Files/Pods-CarbonTrackrOfficialTests/Pods-CarbonTrackrOfficialTests.release.xcconfig"; sourceTree = "<group>"; };
-		CF4D010856975ED98D7B7C48 /* Pods-CarbonTrackrOfficial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarbonTrackrOfficial.release.xcconfig"; path = "Target Support Files/Pods-CarbonTrackrOfficial/Pods-CarbonTrackrOfficial.release.xcconfig"; sourceTree = "<group>"; };
-		D0B13462807F97AF6C5EE17E /* Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests.debug.xcconfig"; path = "Target Support Files/Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests/Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +70,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F0839938B0B5A1909B70299 /* Pods_CarbonTrackrOfficial.framework in Frameworks */,
+				8D3E5C302A7E258C00E466E4 /* FirebaseDatabase in Frameworks */,
+				8D3E5C262A7E0FBA00E466E4 /* FirebaseAnalyticsSwift in Frameworks */,
+				8D3E5C2E2A7E21C300E466E4 /* FirebaseAuth in Frameworks */,
+				8D3E5C322A7EB57600E466E4 /* FirebaseFirestoreSwift in Frameworks */,
+				8D3E5C242A7E0FBA00E466E4 /* FirebaseAnalytics in Frameworks */,
+				8D3E5C342A7EB57B00E466E4 /* FirebaseFirestore in Frameworks */,
+				8D3E5C292A7E1C9300E466E4 /* GoogleSignIn in Frameworks */,
+				8D3E5C2B2A7E1C9300E466E4 /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +85,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D3A709C8A5B6A8E710DA4E8 /* Pods_CarbonTrackrOfficialTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +92,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				092C3EE8D2CD524CA6B6F1D6 /* Pods_CarbonTrackrOfficial_CarbonTrackrOfficialUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,8 +105,7 @@
 				1374EDC52A7057E4003A2C6F /* CarbonTrackrOfficialTests */,
 				1374EDCF2A7057E4003A2C6F /* CarbonTrackrOfficialUITests */,
 				1374EDAD2A7057E2003A2C6F /* Products */,
-				899810DD7E617853FBDF819D /* Pods */,
-				FDE7C0F7CAF3930111BE4C88 /* Frameworks */,
+				8D3E5C2C2A7E21C300E466E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,12 +125,13 @@
 				1374EDAF2A7057E2003A2C6F /* AppDelegate.swift */,
 				1374EDB12A7057E2003A2C6F /* SceneDelegate.swift */,
 				8D9D01542A73315000223224 /* ViewController.swift */,
+				8D5716BC2A81F6390086722D /* CreateAccount.swift */,
 				8D9D01562A73316600223224 /* LogInView.swift */,
 				8D9D01502A73311800223224 /* Main.storyboard */,
 				8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */,
 				1374EDB82A7057E4003A2C6F /* Assets.xcassets */,
 				1374EDBD2A7057E4003A2C6F /* Info.plist */,
-				8DFAB3422A761E8E00C6FBFA /* GoogleService-Info.plist */,
+				8D3E5C202A7E0C7500E466E4 /* GoogleService-Info.plist */,
 			);
 			path = CarbonTrackrOfficial;
 			sourceTree = "<group>";
@@ -150,25 +153,9 @@
 			path = CarbonTrackrOfficialUITests;
 			sourceTree = "<group>";
 		};
-		899810DD7E617853FBDF819D /* Pods */ = {
+		8D3E5C2C2A7E21C300E466E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				927F7F3CBC51CCB5B3F56961 /* Pods-CarbonTrackrOfficial.debug.xcconfig */,
-				CF4D010856975ED98D7B7C48 /* Pods-CarbonTrackrOfficial.release.xcconfig */,
-				D0B13462807F97AF6C5EE17E /* Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests.debug.xcconfig */,
-				61ECBA6B61F4DC24C9111DD4 /* Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests.release.xcconfig */,
-				769AA25FD40D4FA0D888CDFC /* Pods-CarbonTrackrOfficialTests.debug.xcconfig */,
-				C8AFA9721CD6C5E38A079BFF /* Pods-CarbonTrackrOfficialTests.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		FDE7C0F7CAF3930111BE4C88 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				338F72630DFD212772D70FB6 /* Pods_CarbonTrackrOfficial.framework */,
-				C60C05FCA64CC4813E6B0F84 /* Pods_CarbonTrackrOfficial_CarbonTrackrOfficialUITests.framework */,
-				83280C77D45DCA5286103C06 /* Pods_CarbonTrackrOfficialTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -180,17 +167,25 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1374EDD62A7057E4003A2C6F /* Build configuration list for PBXNativeTarget "CarbonTrackrOfficial" */;
 			buildPhases = (
-				00065DD908E5A5B28E0C871A /* [CP] Check Pods Manifest.lock */,
 				1374EDA82A7057E2003A2C6F /* Sources */,
 				1374EDA92A7057E2003A2C6F /* Frameworks */,
 				1374EDAA2A7057E2003A2C6F /* Resources */,
-				ACF86BA194551D8D004722B6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CarbonTrackrOfficial;
+			packageProductDependencies = (
+				8D3E5C232A7E0FBA00E466E4 /* FirebaseAnalytics */,
+				8D3E5C252A7E0FBA00E466E4 /* FirebaseAnalyticsSwift */,
+				8D3E5C282A7E1C9300E466E4 /* GoogleSignIn */,
+				8D3E5C2A2A7E1C9300E466E4 /* GoogleSignInSwift */,
+				8D3E5C2D2A7E21C300E466E4 /* FirebaseAuth */,
+				8D3E5C2F2A7E258C00E466E4 /* FirebaseDatabase */,
+				8D3E5C312A7EB57600E466E4 /* FirebaseFirestoreSwift */,
+				8D3E5C332A7EB57B00E466E4 /* FirebaseFirestore */,
+			);
 			productName = CarbonTrackrOfficial;
 			productReference = 1374EDAC2A7057E2003A2C6F /* CarbonTrackrOfficial.app */;
 			productType = "com.apple.product-type.application";
@@ -199,7 +194,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1374EDD92A7057E4003A2C6F /* Build configuration list for PBXNativeTarget "CarbonTrackrOfficialTests" */;
 			buildPhases = (
-				24FA6E7BCC314095B95A7E66 /* [CP] Check Pods Manifest.lock */,
 				1374EDBE2A7057E4003A2C6F /* Sources */,
 				1374EDBF2A7057E4003A2C6F /* Frameworks */,
 				1374EDC02A7057E4003A2C6F /* Resources */,
@@ -218,11 +212,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1374EDDC2A7057E4003A2C6F /* Build configuration list for PBXNativeTarget "CarbonTrackrOfficialUITests" */;
 			buildPhases = (
-				83926114BD4FE1FCED433A4F /* [CP] Check Pods Manifest.lock */,
 				1374EDC82A7057E4003A2C6F /* Sources */,
 				1374EDC92A7057E4003A2C6F /* Frameworks */,
 				1374EDCA2A7057E4003A2C6F /* Resources */,
-				E8C6E8637DAD2B76D534E8D4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -266,6 +258,10 @@
 				Base,
 			);
 			mainGroup = 1374EDA32A7057E2003A2C6F;
+			packageReferences = (
+				8D3E5C222A7E0FB900E466E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8D3E5C272A7E1C9300E466E4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = 1374EDAD2A7057E2003A2C6F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -282,8 +278,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DFAB3432A761E8E00C6FBFA /* GoogleService-Info.plist in Resources */,
 				8D2772B92A7AC4D80013FE6D /* LaunchScreen.storyboard in Resources */,
+				8D3E5C212A7E0C7500E466E4 /* GoogleService-Info.plist in Resources */,
 				1374EDB92A7057E4003A2C6F /* Assets.xcassets in Resources */,
 				8D9D01512A73311800223224 /* Main.storyboard in Resources */,
 			);
@@ -305,109 +301,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		00065DD908E5A5B28E0C871A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CarbonTrackrOfficial-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		24FA6E7BCC314095B95A7E66 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CarbonTrackrOfficialTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		83926114BD4FE1FCED433A4F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ACF86BA194551D8D004722B6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CarbonTrackrOfficial/Pods-CarbonTrackrOfficial-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CarbonTrackrOfficial/Pods-CarbonTrackrOfficial-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarbonTrackrOfficial/Pods-CarbonTrackrOfficial-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E8C6E8637DAD2B76D534E8D4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests/Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests/Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests/Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		1374EDA82A7057E2003A2C6F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -415,6 +308,7 @@
 			files = (
 				8D9D01572A73316600223224 /* LogInView.swift in Sources */,
 				1374EDB02A7057E2003A2C6F /* AppDelegate.swift in Sources */,
+				8D5716BD2A81F6390086722D /* CreateAccount.swift in Sources */,
 				8D9D01552A73315000223224 /* ViewController.swift in Sources */,
 				1374EDB22A7057E2003A2C6F /* SceneDelegate.swift in Sources */,
 			);
@@ -571,7 +465,6 @@
 		};
 		1374EDD72A7057E4003A2C6F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 927F7F3CBC51CCB5B3F56961 /* Pods-CarbonTrackrOfficial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -600,7 +493,6 @@
 		};
 		1374EDD82A7057E4003A2C6F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF4D010856975ED98D7B7C48 /* Pods-CarbonTrackrOfficial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -629,7 +521,6 @@
 		};
 		1374EDDA2A7057E4003A2C6F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 769AA25FD40D4FA0D888CDFC /* Pods-CarbonTrackrOfficialTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -649,7 +540,6 @@
 		};
 		1374EDDB2A7057E4003A2C6F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8AFA9721CD6C5E38A079BFF /* Pods-CarbonTrackrOfficialTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -669,7 +559,6 @@
 		};
 		1374EDDD2A7057E4003A2C6F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D0B13462807F97AF6C5EE17E /* Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -687,7 +576,6 @@
 		};
 		1374EDDE2A7057E4003A2C6F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61ECBA6B61F4DC24C9111DD4 /* Pods-CarbonTrackrOfficial-CarbonTrackrOfficialUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -743,6 +631,68 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8D3E5C222A7E0FB900E466E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		8D3E5C272A7E1C9300E466E4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8D3E5C232A7E0FBA00E466E4 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D3E5C222A7E0FB900E466E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		8D3E5C252A7E0FBA00E466E4 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D3E5C222A7E0FB900E466E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		8D3E5C282A7E1C9300E466E4 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D3E5C272A7E1C9300E466E4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		8D3E5C2A2A7E1C9300E466E4 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D3E5C272A7E1C9300E466E4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		8D3E5C2D2A7E21C300E466E4 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D3E5C222A7E0FB900E466E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8D3E5C2F2A7E258C00E466E4 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D3E5C222A7E0FB900E466E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		8D3E5C312A7EB57600E466E4 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D3E5C222A7E0FB900E466E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		8D3E5C332A7EB57B00E466E4 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D3E5C222A7E0FB900E466E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1374EDA42A7057E2003A2C6F /* Project object */;
 }

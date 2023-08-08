@@ -1,5 +1,0 @@
-#import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_CarbonTrackrOfficial_CarbonTrackrOfficialUITests : NSObject
-@end
-@implementation PodsDummy_Pods_CarbonTrackrOfficial_CarbonTrackrOfficialUITests
-@end

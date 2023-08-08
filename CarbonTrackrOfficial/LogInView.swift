@@ -7,8 +7,11 @@
 
 import UIKit
 import Foundation
-import FirebaseCore
+import FirebaseAuth
 import GoogleSignIn
+import FirebaseCore
+import FirebaseFirestore
+import CryptoKit
 
 class LogInView: UIViewController {
     
@@ -17,12 +20,16 @@ class LogInView: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var greetingLabel: UILabel!
+    @IBOutlet weak var signInWithGoogleButton: UIButton!
+    @IBOutlet weak var invalid1: UILabel!
+    @IBOutlet weak var invalid2: UILabel!
     
+    let database = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logInButton.layer.cornerRadius = 30
+        logInButton.layer.cornerRadius = 25
         logInButton.layer.masksToBounds = true
         // Do any additional setup after loading the view.
         let currentDate = Date() // Get the current date and time
@@ -41,38 +48,128 @@ class LogInView: UIViewController {
         passwordField.isSecureTextEntry = true
         passwordField.placeholder = "password"
         
-        userNameField.layer.cornerRadius = 15
+        userNameField.layer.cornerRadius = 10
         userNameField.layer.masksToBounds = true
-        passwordField.layer.cornerRadius = 15
+        passwordField.layer.cornerRadius = 10
         passwordField.layer.masksToBounds = true
         
+        signInWithGoogleButton.layer.cornerRadius = 20
+        signInWithGoogleButton.layer.masksToBounds = true
+        
     }
     
     
-    @IBAction func googleSignIn(_ sender: Any) {
-//        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
-//            guard error == nil else { return }
-//
-//            guard let signInResult = signInResult else { return }
-//            let user = signInResult.user
-//          }
+    @IBAction func logInButton(_ sender: Any) {
+        var allow: Bool = false
+        var text = self.userNameField.text
+        let password = self.passwordField.text! //encodePassword(self.passwordField.text!)!
+        var type: String = ""
+        if((text?.contains(".com")) == false) {
+            type = "userName"
+        } else {
+            type = "email"
+        }
+        let usersCollection = self.database.collection("CarbonTrackr")
         
-        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-        let signinConfig = GIDConfiguration(clientID: clientID)
-        // Create Google Sign In configuration object.
-
-        GIDSignIn.sharedInstance.configuration = signinConfig
-            let scenes = UIApplication.shared.connectedScenes
-            let windowScenes = scenes.first as? UIWindowScene
-            let window = windowScenes?.windows.first
-            guard let rootViewController = window?.rootViewController else { return }
-
-            GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController) { signInResult, error in
-                // ...
+        // Check if the user with the given UID exists in the database
+        usersCollection.whereField("\(type)", isEqualTo: text!).getDocuments { snapshot, error in
+            if let error = error {
+                print("Error checking user existence: \(error.localizedDescription)")
+                // Handle the error, such as showing an alert to the user
+                return
+            }
+            
+            if let documents = snapshot?.documents, !documents.isEmpty {
+                // User exists in the database
+                usersCollection.whereField("pwd", isEqualTo: password).getDocuments { snapshot2, error in
+                    if let documents = snapshot2?.documents, !documents.isEmpty {
+                        print("User exists!")
+                        allow = true
+                        UIView.animate(
+                            withDuration: 1,
+                            delay: 0.0,
+                            options: .curveEaseInOut,
+                            animations: {
+                                self.invalid1.isHidden = true
+                                self.invalid2.isHidden = true
+                            })
+                    } else {
+                        allow = false
+                        UIView.animate(
+                            withDuration: 1,
+                            delay: 0.0,
+                            options: .curveEaseInOut,
+                            animations: {
+                                self.invalid1.isHidden = false
+                                self.invalid2.isHidden = false
+                                self.createVibrationAnimation()
+                            })
+                    }
+                }
+                
+                
+                // Perform any actions you want if the user exists, such as navigating to a different screen
+            } else {
+                // User does not exist in the database
+                print("User does not exist.")
+                allow = false
+                UIView.animate(
+                    withDuration: 1,
+                    delay: 0.0,
+                    options: .curveEaseInOut,
+                    animations: {
+                        self.invalid1.isHidden = false
+                        self.invalid2.isHidden = false
+                        self.createVibrationAnimation()
+                    })
+                // Perform any actions you want if the user does not exist, such as showing a sign-up screen
+            }
         }
         
-        
     }
+    
+    
+    @IBAction func googleButtonPressed(_ sender: Any) {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        // Create Google Sign In configuration object.
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+        // Start the sign in flow!
+        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
+            guard error == nil else {
+                return
+            }
+            guard let user = result?.user,
+                  let idToken = user.idToken?.tokenString
+            else {
+                return
+            }
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: user.accessToken.tokenString)
+            // ...
+            Auth.auth().signIn(with: credential) { result, error in
+                
+            } // At this point, our user is signed in
+            
+        }
+    }
+    
+//    func encodePassword(_ password: String) -> String? {
+//        // Generate a random salt
+//        var saltData = Data(count: 16)
+//        let _ = saltData.withUnsafeMutableBytes { SecRandomCopyBytes(kSecRandomDefault, 16, $0.baseAddress!) }
+//        // Convert password and salt to Data
+//        guard let passwordData = password.data(using: .utf8) else {
+//            return nil // Failed to convert password to data
+//        }
+//        // Combine the password and salt
+//        let combinedData = passwordData + saltData
+//        // Hash the combined data using SHA-256
+//        let hashedData = SHA256.hash(data: combinedData)
+//        // Convert the hashed data to a hexadecimal string
+//        let hashedPassword = hashedData.compactMap { String(format: "%02x", $0) }.joined()
+//        return hashedPassword
+//    }
     
     
     // Called when 'return' key pressed
@@ -85,6 +182,20 @@ class LogInView: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func createVibrationAnimation() {
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07 // Duration for each vibration step
+        animation.repeatCount = 3
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: invalid1.center.x - 5, y: invalid1.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: invalid1.center.x + 5, y: invalid1.center.y))
+        invalid1.layer.add(animation, forKey: "position")
+        
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: invalid2.center.x - 5, y: invalid2.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: invalid2.center.x + 5, y: invalid2.center.y))
+        invalid2.layer.add(animation, forKey: "position")
     }
 
 }
