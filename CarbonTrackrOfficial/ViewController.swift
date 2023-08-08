@@ -208,7 +208,6 @@ class ViewController: UIViewController {
                         // User does not exist in the database
                         let vc = self.storyboard?.instantiateViewController(withIdentifier: "createAcc")
                         self.present(vc!, animated: true)
-                        self.dismiss(animated: true)
                         // Perform any actions you want if the user does not exist, such as showing a sign-up screen
                     }
                 }
