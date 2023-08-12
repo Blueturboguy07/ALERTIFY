@@ -26,7 +26,7 @@
 		8D9D01552A73315000223224 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D01542A73315000223224 /* ViewController.swift */; };
 		8D9D01572A73316600223224 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D01562A73316600223224 /* LogInView.swift */; };
 		8DBD30DB2A82CBE300F165CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD30DA2A82CBE300F165CA /* GoogleService-Info.plist */; };
-		8DF9FC372A82CD5300E6B3DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF9FC362A82CD5300E6B3DA /* Main.storyboard */; };
+		BDD82A112A85B0EC00E60C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD82A102A85B0EC00E60C70 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +62,7 @@
 		8D9D01542A73315000223224 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D9D01562A73316600223224 /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		8DBD30DA2A82CBE300F165CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8DF9FC362A82CD5300E6B3DA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../Desktop/Main.storyboard; sourceTree = "<group>"; };
+		BDD82A102A85B0EC00E60C70 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +126,8 @@
 				1374EDB12A7057E2003A2C6F /* SceneDelegate.swift */,
 				8D9D01542A73315000223224 /* ViewController.swift */,
 				8D5716BC2A81F6390086722D /* CreateAccount.swift */,
+				BDD82A102A85B0EC00E60C70 /* Main.storyboard */,
 				8D9D01562A73316600223224 /* LogInView.swift */,
-				8DF9FC362A82CD5300E6B3DA /* Main.storyboard */,
 				8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */,
 				1374EDB82A7057E4003A2C6F /* Assets.xcassets */,
 				1374EDBD2A7057E4003A2C6F /* Info.plist */,
@@ -279,7 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D2772B92A7AC4D80013FE6D /* LaunchScreen.storyboard in Resources */,
-				8DF9FC372A82CD5300E6B3DA /* Main.storyboard in Resources */,
+				BDD82A112A85B0EC00E60C70 /* Main.storyboard in Resources */,
 				1374EDB92A7057E4003A2C6F /* Assets.xcassets in Resources */,
 				8DBD30DB2A82CBE300F165CA /* GoogleService-Info.plist in Resources */,
 			);
