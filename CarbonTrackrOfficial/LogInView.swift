@@ -59,7 +59,7 @@ class LogInView: UIViewController {
     }
     
     
-    @IBAction func logInButton(_ sender: Any) {
+    @IBAction func logInButtonClicked(_ sender: Any) {
         var allow: Bool = false
         var text = self.userNameField.text
         let password = self.passwordField.text! //encodePassword(self.passwordField.text!)!
@@ -173,7 +173,8 @@ class LogInView: UIViewController {
     
     
     // Called when 'return' key pressed
-    func textFieldShouldReturn(textField:UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField:UITextField) -> Bool {
+        logInButton.sendActions(for: .touchUpInside)
         textField.resignFirstResponder()
         return true
     }
