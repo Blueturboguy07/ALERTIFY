@@ -93,6 +93,8 @@ class LogInView: UIViewController {
                                 self.invalid1.isHidden = true
                                 self.invalid2.isHidden = true
                             })
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "homeView")
+                        self.navigationController?.pushViewController(vc!, animated: true)
                     } else {
                         allow = false
                         UIView.animate(

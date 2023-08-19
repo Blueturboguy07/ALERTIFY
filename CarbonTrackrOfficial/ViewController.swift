@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         signInButton.layer.masksToBounds = true
         logo.isHidden = false
         logoText.isHidden = false
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
