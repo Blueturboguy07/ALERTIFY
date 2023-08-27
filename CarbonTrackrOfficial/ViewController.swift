@@ -19,10 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var logoDivider: UIImageView!
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var googleLogo: UIImageView!
-    @IBOutlet weak var logoText: UILabel!
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var getStartedButton: UIButton!
     @IBOutlet weak var logo: UIImageView!
+   
     
     let database = Firestore.firestore()
 
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         signInButton.layer.cornerRadius = 25
         signInButton.layer.masksToBounds = true
         logo.isHidden = false
-        logoText.isHidden = false
+
         
     }
     
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
                 delay: 2.0,
                 options: .curveEaseInOut,
                 animations: {
-                    self.logoText.alpha = 0.0
+                 
                 })
             
             UIView.animate(
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
                 options: .curveEaseInOut,
                 animations: {
                     self.logo.alpha = 0.0
-                    self.logoText.frame.origin.y -= self.view.bounds.height/4
+                    
                     self.logoText2.frame.origin.y -= self.view.bounds.height/6
                     self.logoText2.alpha = 1.0
                 },

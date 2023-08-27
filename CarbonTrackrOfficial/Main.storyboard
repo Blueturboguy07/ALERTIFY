@@ -4,9 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -201,7 +199,7 @@
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="filled" title="Log in" cornerStyle="large" buttonSize="large">
                                     <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="23"/>
-                                    <color key="baseBackgroundColor" name="green"/>
+                                    <color key="baseBackgroundColor" red="0.91841894390000001" green="0.28123706580000002" blue="0.16070026160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="logInButtonClicked:" destination="Z6s-Wc-BT2" eventType="touchUpInside" id="6Uc-Mx-hL9"/>
@@ -224,7 +222,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="11"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Create account?">
-                                    <color key="titleColor" name="green"/>
+                                    <color key="titleColor" red="0.91841894390000001" green="0.28123706580000002" blue="0.16070026160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkC-vj-VhA">
@@ -279,7 +277,7 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qou-qB-g4b">
                                 <rect key="frame" x="95" y="226" width="240" height="7"/>
-                                <color key="backgroundColor" red="0.15449011330000001" green="0.65320467950000005" blue="0.33512544630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91841894390000001" green="0.28123706580000002" blue="0.16070026160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="7" id="5lW-z5-Aku"/>
                                     <constraint firstAttribute="width" constant="240" id="X7f-i4-6bM"/>
@@ -287,7 +285,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FfK-Ac-umO"/>
-                        <color key="backgroundColor" red="0.79558614670000005" green="0.82127015609999998" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.12173586340000001" green="0.125131458" blue="0.1411786079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Aed-Xb-Mvx" firstAttribute="centerX" secondItem="cdI-7v-kbT" secondAttribute="centerX" id="02t-0y-3uY"/>
                             <constraint firstItem="Qou-qB-g4b" firstAttribute="top" secondItem="FfK-Ac-umO" secondAttribute="top" constant="123" id="2uo-SE-IRL"/>
@@ -358,7 +356,7 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cAy-U2-uUk">
                                 <rect key="frame" x="95" y="144" width="240" height="7"/>
-                                <color key="backgroundColor" red="0.15449011330000001" green="0.65320467950000005" blue="0.33512544630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91841894390000001" green="0.28123706580000002" blue="0.16070026160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="7" id="9kG-uh-jeC"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="7" id="BVb-LC-OIV"/>
@@ -371,7 +369,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="11"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Already have an account?">
-                                    <color key="titleColor" name="green"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tGP-5i-VhA">
@@ -447,7 +445,7 @@
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="filled" title="Next" cornerStyle="large" buttonSize="large">
                                     <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="23"/>
-                                    <color key="baseBackgroundColor" name="green"/>
+                                    <color key="baseBackgroundColor" red="0.91841894390000001" green="0.28123706580000002" blue="0.16070026160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="1XC-ZA-C0T" kind="show" id="P0d-lX-RDc"/>
@@ -495,7 +493,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F3e-K5-nhV"/>
-                        <color key="backgroundColor" red="0.79558614670000005" green="0.82127015609999998" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.12173586340000001" green="0.125131458" blue="0.1411786079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="cAy-U2-uUk" firstAttribute="top" secondItem="F3e-K5-nhV" secondAttribute="top" constant="41" id="1PK-af-jEB"/>
                             <constraint firstItem="cAy-U2-uUk" firstAttribute="centerX" secondItem="csF-aa-7Nc" secondAttribute="centerX" id="288-TE-Xz1"/>
@@ -568,7 +566,7 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ni6-4J-qiw">
                                 <rect key="frame" x="95" y="144" width="240" height="7"/>
-                                <color key="backgroundColor" red="0.15449011330000001" green="0.65320467950000005" blue="0.33512544630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.91841894390000001" green="0.28123706580000002" blue="0.16070026160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="AIT-61-0Te"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="136" id="XgP-kA-Q9f"/>
@@ -584,7 +582,7 @@
                                 </constraints>
                                 <buttonConfiguration key="configuration" style="filled" title="Create" cornerStyle="large" buttonSize="large">
                                     <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="23"/>
-                                    <color key="baseBackgroundColor" name="green"/>
+                                    <color key="baseBackgroundColor" red="0.91841894390000001" green="0.28123706580000002" blue="0.16070026160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uIO-Na-HWs">
@@ -598,7 +596,7 @@
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FLM-3M-gmo"/>
-                        <color key="backgroundColor" red="0.79558614670000005" green="0.82127015609999998" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.12173586340000001" green="0.125131458" blue="0.1411786079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="MJD-qo-gQh" firstAttribute="top" secondItem="FLM-3M-gmo" secondAttribute="top" id="OVU-Cj-1do"/>
                             <constraint firstItem="FLM-3M-gmo" firstAttribute="bottom" secondItem="bQ1-uE-l87" secondAttribute="bottom" constant="103" id="WIA-7g-dHb"/>
@@ -625,53 +623,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="sportscourt.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-Cj-M73">
-                                <rect key="frame" x="145.66666666666666" y="810" width="138.99999999999997" height="119"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="139" id="L6O-Fh-d6D"/>
-                                    <constraint firstAttribute="height" constant="120.33" id="q6b-n6-36D"/>
-                                </constraints>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTj-66-shJ">
                                 <rect key="frame" x="0.0" y="844" width="430" height="117"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="backgroundColor" red="0.91841894390000001" green="0.28123706580000002" blue="0.16070026160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="117" id="Ey3-lN-0PA"/>
                                     <constraint firstAttribute="width" constant="430" id="WbN-U0-pwE"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" image="plus.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Cqa-yW-Yg0">
-                                <rect key="frame" x="165" y="823" width="100" height="93"/>
-                                <color key="tintColor" name="green"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="94.329999999999998" id="HXf-Dp-loX"/>
-                                    <constraint firstAttribute="width" constant="100" id="c1c-Vy-GyV"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjV-Fa-h5j">
+                                <rect key="frame" x="27" y="278" width="376" height="376"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.91841894390000001" green="0.28123706580000002" blue="0.16070026160000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <size key="titleShadowOffset" width="12" height="12"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="izH-IE-cZc" appends="YES" id="rNj-3k-uRU"/>
+                                    <action selector="bigRedButton:" destination="dND-9g-Y5t" eventType="touchUpInside" id="kcx-D0-yyp"/>
                                 </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="alert" translatesAutoresizingMaskIntoConstraints="NO" id="bcY-In-Gzs">
+                                <rect key="frame" x="33" y="278" width="365" height="342"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="17Q-gR-HRD"/>
-                        <color key="backgroundColor" red="0.79558614670000005" green="0.82127015609999998" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.12156862745098039" green="0.12549019607843137" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="dTj-66-shJ" firstAttribute="centerX" secondItem="Q65-Ev-hMp" secondAttribute="centerX" id="6gW-1t-XbJ"/>
-                            <constraint firstItem="dTj-66-shJ" firstAttribute="top" secondItem="zhd-Cj-M73" secondAttribute="bottom" constant="-85.333333333333371" id="GB0-8d-eiW"/>
-                            <constraint firstItem="zhd-Cj-M73" firstAttribute="bottom" secondItem="17Q-gR-HRD" secondAttribute="bottom" constant="31.333333333333371" id="K5x-BJ-Lkx"/>
-                            <constraint firstItem="zhd-Cj-M73" firstAttribute="centerX" secondItem="Q65-Ev-hMp" secondAttribute="centerX" id="Wvc-bM-jeo"/>
-                            <constraint firstItem="Cqa-yW-Yg0" firstAttribute="centerX" secondItem="Q65-Ev-hMp" secondAttribute="centerX" id="elr-xL-dEm"/>
                             <constraint firstItem="dTj-66-shJ" firstAttribute="centerX" secondItem="Q65-Ev-hMp" secondAttribute="centerX" id="g0V-Q1-SbT"/>
                             <constraint firstItem="dTj-66-shJ" firstAttribute="bottom" secondItem="17Q-gR-HRD" secondAttribute="bottom" constant="63" id="nNK-eT-mtJ"/>
-                            <constraint firstItem="Cqa-yW-Yg0" firstAttribute="bottom" secondItem="17Q-gR-HRD" secondAttribute="bottom" constant="18.333333333333371" id="rdN-tM-l28"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tD0-at-99Y"/>
-                    <connections>
-                        <outlet property="addButton" destination="Cqa-yW-Yg0" id="PVq-tr-vi8"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9oR-Jx-Qn2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="dND-9g-Y5t" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="izH-IE-cZc">
                     <connections>
                         <action selector="recognizeTapGestureWithRecognizer:" destination="vVZ-cJ-D3L" id="Jbo-Yp-12T"/>
@@ -701,14 +688,7 @@
     </scenes>
     <resources>
         <image name="Logo" width="500" height="500"/>
+        <image name="alert" width="500" height="500"/>
         <image name="googleLogo" width="500" height="500"/>
-        <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="sportscourt.circle.fill" catalog="system" width="128" height="123"/>
-        <namedColor name="green">
-            <color red="0.11900000274181366" green="0.71200001239776611" blue="0.36700001358985901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
