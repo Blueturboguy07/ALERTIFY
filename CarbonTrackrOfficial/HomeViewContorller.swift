@@ -19,9 +19,8 @@ class HomeViewContorller: UIViewController {
     }
     
     @IBAction func recognizeTapGesture(recognizer:UITapGestureRecognizer) {
-        label.text = "YAYAYAYAY"
         let initialScale: CGFloat = 1.0
-            let finalScale: CGFloat = 1.1
+            let finalScale: CGFloat = 1.05
             
             // Animate the button's scale up
             UIView.animate(
