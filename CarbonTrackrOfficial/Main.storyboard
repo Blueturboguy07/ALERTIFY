@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -655,7 +656,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="alt alert" translatesAutoresizingMaskIntoConstraints="NO" id="7BB-st-vC6">
-                                        <rect key="frame" x="171" y="-53" width="90" height="153"/>
+                                        <rect key="frame" x="170" y="-53" width="90" height="153"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="153" id="1MC-uv-9Bf"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="153" id="BSc-Ar-1Rv"/>
@@ -667,21 +668,23 @@
                                         <rect key="frame" x="17" y="8" width="131" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZY-6i-Cyb">
-                                        <rect key="frame" x="35" y="8" width="94" height="67"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZY-6i-Cyb">
+                                        <rect key="frame" x="47" y="8" width="68" height="67"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <segue destination="2Wk-P6-kAA" kind="push" id="4zo-w4-qxr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.91764705882352937" green="0.28235294117647058" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="MZY-6i-Cyb" firstAttribute="centerY" secondItem="dTj-66-shJ" secondAttribute="centerY" id="0lj-mI-ch9"/>
                                     <constraint firstAttribute="height" constant="117" id="Ey3-lN-0PA"/>
                                     <constraint firstAttribute="width" constant="430" id="WbN-U0-pwE"/>
                                     <constraint firstItem="7BB-st-vC6" firstAttribute="centerY" secondItem="dTj-66-shJ" secondAttribute="centerY" id="oj4-Qh-xhu"/>
                                     <constraint firstItem="7BB-st-vC6" firstAttribute="centerX" secondItem="dTj-66-shJ" secondAttribute="centerX" constant="1" id="rWm-MW-mvp"/>
                                     <constraint firstItem="7BB-st-vC6" firstAttribute="centerY" secondItem="dTj-66-shJ" secondAttribute="centerY" constant="-35" id="vy8-9A-5WD"/>
-                                    <constraint firstItem="MZY-6i-Cyb" firstAttribute="centerX" secondItem="dTj-66-shJ" secondAttribute="centerX" id="wpH-qL-Kr0"/>
                                     <constraint firstItem="7BB-st-vC6" firstAttribute="centerX" secondItem="dTj-66-shJ" secondAttribute="centerX" id="yya-t7-bj8"/>
                                 </constraints>
                             </view>
@@ -795,6 +798,22 @@
             </objects>
             <point key="canvasLocation" x="4526.5116279069771" y="1438.8412017167384"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="COt-R9-zaV">
+            <objects>
+                <viewController id="2Wk-P6-kAA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RTj-qz-Tl6">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9JG-o8-mow"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6gU-HI-5On"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mvh-PV-xZr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3659" y="2146"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Logo" width="500" height="500"/>
@@ -803,5 +822,8 @@
         <image name="googleLogo" width="500" height="500"/>
         <image name="hero texrt" width="500" height="500"/>
         <image name="pin" width="500" height="500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
