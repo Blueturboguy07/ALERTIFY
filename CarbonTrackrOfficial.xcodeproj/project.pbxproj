@@ -22,7 +22,6 @@
 		8D3E5C302A7E258C00E466E4 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C2F2A7E258C00E466E4 /* FirebaseDatabase */; };
 		8D3E5C322A7EB57600E466E4 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C312A7EB57600E466E4 /* FirebaseFirestoreSwift */; };
 		8D3E5C342A7EB57B00E466E4 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C332A7EB57B00E466E4 /* FirebaseFirestore */; };
-		8D5716BD2A81F6390086722D /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5716BC2A81F6390086722D /* CreateAccount.swift */; };
 		8D9D01552A73315000223224 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D01542A73315000223224 /* ViewController.swift */; };
 		8D9D01572A73316600223224 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D01562A73316600223224 /* LogInView.swift */; };
 		8DB4F5172A8DD66E000EF8CC /* HomeViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB4F5162A8DD66E000EF8CC /* HomeViewContorller.swift */; };
@@ -59,7 +58,6 @@
 		1374EDD02A7057E4003A2C6F /* CarbonTrackrOfficialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonTrackrOfficialUITests.swift; sourceTree = "<group>"; };
 		1374EDD22A7057E4003A2C6F /* CarbonTrackrOfficialUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonTrackrOfficialUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8D5716BC2A81F6390086722D /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		8D9D01542A73315000223224 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D9D01562A73316600223224 /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		8DB4F5162A8DD66E000EF8CC /* HomeViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewContorller.swift; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 				1374EDB12A7057E2003A2C6F /* SceneDelegate.swift */,
 				8D9D01542A73315000223224 /* ViewController.swift */,
 				8DB4F5162A8DD66E000EF8CC /* HomeViewContorller.swift */,
-				8D5716BC2A81F6390086722D /* CreateAccount.swift */,
 				BDD82A102A85B0EC00E60C70 /* Main.storyboard */,
 				8D9D01562A73316600223224 /* LogInView.swift */,
 				8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */,
@@ -311,7 +308,6 @@
 			files = (
 				8D9D01572A73316600223224 /* LogInView.swift in Sources */,
 				1374EDB02A7057E2003A2C6F /* AppDelegate.swift in Sources */,
-				8D5716BD2A81F6390086722D /* CreateAccount.swift in Sources */,
 				8DB4F5172A8DD66E000EF8CC /* HomeViewContorller.swift in Sources */,
 				8D9D01552A73315000223224 /* ViewController.swift in Sources */,
 				1374EDB22A7057E2003A2C6F /* SceneDelegate.swift in Sources */,
