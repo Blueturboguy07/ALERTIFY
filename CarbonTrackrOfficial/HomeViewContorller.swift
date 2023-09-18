@@ -73,7 +73,6 @@ class HomeViewContorller: UIViewController {
                 }
             )
     }
-    
 
     /*
     // MARK: - Navigation

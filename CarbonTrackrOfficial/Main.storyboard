@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -393,10 +394,14 @@
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="map.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Jg6-4s-Ov3">
                                         <rect key="frame" x="47" y="17" width="73" height="51"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="53" id="CA8-9v-0PF"/>
                                             <constraint firstAttribute="width" constant="73" id="Lbu-3b-4An"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="X5F-U3-eKc" appends="YES" id="lW8-mN-UXA"/>
+                                        </connections>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="gearshape.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ckC-eD-biG">
                                         <rect key="frame" x="308" y="11.333333333333329" width="85" height="58"/>
@@ -405,6 +410,15 @@
                                             <constraint firstAttribute="height" constant="58.666666666666671" id="tNr-M2-p9H"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxY-OL-ag3">
+                                        <rect key="frame" x="32" y="11" width="104" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <segue destination="Mzp-of-SAp" kind="push" id="LXL-6K-G8s"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -495,6 +509,11 @@
                         <action selector="recognizeTapGestureWithRecognizer:" destination="vVZ-cJ-D3L" id="Jbo-Yp-12T"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="X5F-U3-eKc">
+                    <connections>
+                        <action selector="mapTap:" destination="vVZ-cJ-D3L" id="rjA-h6-4a9"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3658.6046511627906" y="842.70386266094431"/>
         </scene>
@@ -545,6 +564,32 @@
             </objects>
             <point key="canvasLocation" x="4527" y="842"/>
         </scene>
+        <!--Map Controller View Controller-->
+        <scene sceneID="aB9-qH-xZm">
+            <objects>
+                <viewController storyboardIdentifier="MapID" id="Mzp-of-SAp" customClass="MapControllerViewController" customModule="CarbonTrackrOfficial" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yWD-6H-Q7V">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OsK-Lo-t13">
+                                <rect key="frame" x="0.0" y="402" width="430" height="530"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b51-9J-oHK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MN2-9m-glf"/>
+                    <connections>
+                        <outlet property="map" destination="OsK-Lo-t13" id="Rx4-v0-sVL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k8s-1p-ayy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3658.6046511627906" y="1532.8326180257511"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Logo" width="500" height="500"/>
@@ -554,6 +599,9 @@
         <image name="hero texrt" width="500" height="500"/>
         <image name="house.circle" catalog="system" width="128" height="123"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

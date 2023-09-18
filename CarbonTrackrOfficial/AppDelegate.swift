@@ -2,15 +2,17 @@
 //  AppDelegate.swift
 //  CarbonTrackrOfficial
 //
-//  Created by Manish Bellani on 7/25/23.
+//  Created by Mann Bellani on 7/25/23.
 //
-
+import MapKit
 import UIKit
 import FirebaseCore
 import FirebaseAuth
 import GoogleSignIn
 
 let defaults = UserDefaults.standard
+var locationManager: CLLocationManager?
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         UINavigationBar.appearance().tintColor = UIColor(named: "red")
         defaults.set(false, forKey: "launchScreenAnimation")
+        
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        
         return true
     }
     

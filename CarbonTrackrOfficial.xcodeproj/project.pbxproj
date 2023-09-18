@@ -26,6 +26,7 @@
 		8D9D01572A73316600223224 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D01562A73316600223224 /* LogInView.swift */; };
 		8DB4F5172A8DD66E000EF8CC /* HomeViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB4F5162A8DD66E000EF8CC /* HomeViewContorller.swift */; };
 		8DBD30DB2A82CBE300F165CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD30DA2A82CBE300F165CA /* GoogleService-Info.plist */; };
+		BDCF10AE2AB63C7500266586 /* MapControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCF10AD2AB63C7500266586 /* MapControllerViewController.swift */; };
 		BDD82A112A85B0EC00E60C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD82A102A85B0EC00E60C70 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		8D9D01562A73316600223224 /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		8DB4F5162A8DD66E000EF8CC /* HomeViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewContorller.swift; sourceTree = "<group>"; };
 		8DBD30DA2A82CBE300F165CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BDCF10AD2AB63C7500266586 /* MapControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapControllerViewController.swift; sourceTree = "<group>"; };
 		BDD82A102A85B0EC00E60C70 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 				8DB4F5162A8DD66E000EF8CC /* HomeViewContorller.swift */,
 				BDD82A102A85B0EC00E60C70 /* Main.storyboard */,
 				8D9D01562A73316600223224 /* LogInView.swift */,
+				BDCF10AD2AB63C7500266586 /* MapControllerViewController.swift */,
 				8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */,
 				1374EDB82A7057E4003A2C6F /* Assets.xcassets */,
 				1374EDBD2A7057E4003A2C6F /* Info.plist */,
@@ -311,6 +314,7 @@
 				8DB4F5172A8DD66E000EF8CC /* HomeViewContorller.swift in Sources */,
 				8D9D01552A73315000223224 /* ViewController.swift in Sources */,
 				1374EDB22A7057E2003A2C6F /* SceneDelegate.swift in Sources */,
+				BDCF10AE2AB63C7500266586 /* MapControllerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
