@@ -12,6 +12,7 @@ import GoogleSignIn
 import FirebaseCore
 import FirebaseFirestore
 import CryptoKit
+import MapKit
 
 struct StudentInfo: Codable {
     let birthdate: String
@@ -22,9 +23,11 @@ struct StudentInfo: Codable {
     let counselor: String
 }
 
+var name: String?
+var campus: String?
+
 class LogInView: UIViewController {
     
-    @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var userNameField: UITextField!
@@ -34,10 +37,9 @@ class LogInView: UIViewController {
     @IBOutlet weak var invalid2: UILabel!
     @IBOutlet weak var circularActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loggingIn: UILabel!
+
     
-    
-    //    let database = Firestore.firestore()
-    var student: StudentInfo?
+    let database = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +65,12 @@ class LogInView: UIViewController {
         
         userNameField.layer.cornerRadius = 10
         userNameField.layer.masksToBounds = true
+        userNameField.textColor = UIColor.black
+        userNameField.backgroundColor = UIColor.white
         passwordField.layer.cornerRadius = 10
         passwordField.layer.masksToBounds = true
+        passwordField.textColor = UIColor.black
+        passwordField.backgroundColor = UIColor.white
         
         signInWithGoogleButton.layer.cornerRadius = 20
         signInWithGoogleButton.layer.masksToBounds = true
@@ -108,7 +114,6 @@ class LogInView: UIViewController {
         if let url = components.url {
             let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
                 guard let self = self else { return }
-                
                 guard let data = data, error == nil else {
                     //print("Something went wrong")
                     DispatchQueue.main.async {
@@ -123,6 +128,9 @@ class LogInView: UIViewController {
                 var result: StudentInfo?
                 do {
                     result = try JSONDecoder().decode(StudentInfo.self, from: data)
+                    name = result!.name
+                    campus = result!.campus
+                    // All properties are safely unwrapped and not nil
                 } catch {
                     //print("Failed to convert because \(error.localizedDescription)")
                     DispatchQueue.main.async {
@@ -134,12 +142,20 @@ class LogInView: UIViewController {
                     return
                 }
                 
-                if let _ = result {
+                if let student = result {
                     DispatchQueue.main.async {
                         self.invalid1.isHidden = true
                         self.invalid2.isHidden = true
                     }
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "homeView")
+                    if(defaults.valueExists(forKey: "uidAlertify") && defaults.string(forKey: "uidAlertify")?.count == 12) {
+                        uid = defaults.string(forKey: "uidAlertify")!
+                    } else {
+                        uid = generateUserID()
+                        defaults.set(uid, forKey: "uidAlertify")
+                    }
+                    let databasePath = "Alertify/\(uid)"
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "homeView") as? HomeViewContorller
+                    saveData(userName: text, password: password, path: databasePath)
                     DispatchQueue.main.async {
                         self.navigationController?.pushViewController(vc!, animated: true)
                         self.stopLoading()
@@ -155,121 +171,20 @@ class LogInView: UIViewController {
             }
             task.resume()
         }
-        
-        /**  Friebase Accoutn checker
-         var allow: Bool = false
-         var text = self.userNameField.text
-         let password = self.passwordField.text! //encodePassword(self.passwordField.text!)!
-         var type: String = ""
-         if((text?.contains(".com")) == false) {
-         type = "userName"
-         } else {
-         type = "email"
-         }
-         let usersCollection = self.database.collection("CarbonTrackr")
-         
-         // Check if the user with the given UID exists in the database
-         usersCollection.whereField("\(type)", isEqualTo: text!).getDocuments { snapshot, error in
-         if let error = error {
-         print("Error checking user existence: \(error.localizedDescription)")
-         // Handle the error, such as showing an alert to the user
-         return
-         }
-         
-         if let documents = snapshot?.documents, !documents.isEmpty {
-         // User exists in the database
-         usersCollection.whereField("pwd", isEqualTo: password).getDocuments { snapshot2, error in
-         if let documents = snapshot2?.documents, !documents.isEmpty {
-         print("User exists!")
-         allow = true
-         UIView.animate(
-         withDuration: 1,
-         delay: 0.0,
-         options: .curveEaseInOut,
-         animations: {
-         self.invalid1.isHidden = true
-         self.invalid2.isHidden = true
-         })
-         let vc = self.storyboard?.instantiateViewController(withIdentifier: "homeView")
-         self.navigationController?.pushViewController(vc!, animated: true)
-         } else {
-         allow = false
-         UIView.animate(
-         withDuration: 1,
-         delay: 0.0,
-         options: .curveEaseInOut,
-         animations: {
-         self.invalid1.isHidden = false
-         self.invalid2.isHidden = false
-         self.createVibrationAnimation()
-         })
-         }
-         }
-         
-         
-         // Perform any actions you want if the user exists, such as navigating to a different screen
-         } else {
-         // User does not exist in the database
-         print("User does not exist.")
-         allow = false
-         UIView.animate(
-         withDuration: 1,
-         delay: 0.0,
-         options: .curveEaseInOut,
-         animations: {
-         self.invalid1.isHidden = false
-         self.invalid2.isHidden = false
-         self.createVibrationAnimation()
-         })
-         // Perform any actions you want if the user does not exist, such as showing a sign-up screen
-         }
-         }
-         **/
-        
     }
     
-    
-    @IBAction func googleButtonPressed(_ sender: Any) {
-        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-        // Create Google Sign In configuration object.
-        let config = GIDConfiguration(clientID: clientID)
-        GIDSignIn.sharedInstance.configuration = config
-        // Start the sign in flow!
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
-            guard error == nil else {
-                return
-            }
-            guard let user = result?.user,
-                  let idToken = user.idToken?.tokenString
-            else {
-                return
-            }
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-                                                           accessToken: user.accessToken.tokenString)
-            // ...
-            Auth.auth().signIn(with: credential) { result, error in
-                
-            } // At this point, our user is signed in
-            
+    func generateUserID() -> String {
+        let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+"
+        var userID = ""
+
+        for _ in 0..<12 {
+            let randomIndex = Int(arc4random_uniform(UInt32(characters.count)))
+            let randomCharacter = characters[characters.index(characters.startIndex, offsetBy: randomIndex)]
+            userID.append(randomCharacter)
         }
+
+        return userID
     }
-    
-    //    func encodePassword(_ password: String) -> String? {
-    //        // Generate a random salt
-    //        var saltData = Data(count: 16)
-    //        let _ = saltData.withUnsafeMutableBytes { SecRandomCopyBytes(kSecRandomDefault, 16, $0.baseAddress!) }
-    //        // Convert password and salt to Data
-    //        guard let passwordData = password.data(using: .utf8) else {
-    //            return nil // Failed to convert password to data
-    //        }
-    //        // Combine the password and salt
-    //        let combinedData = passwordData + saltData
-    //        // Hash the combined data using SHA-256
-    //        let hashedData = SHA256.hash(data: combinedData)
-    //        // Convert the hashed data to a hexadecimal string
-    //        let hashedPassword = hashedData.compactMap { String(format: "%02x", $0) }.joined()
-    //        return hashedPassword
-    //    }
     
     
     // Called when 'return' key pressed
@@ -299,4 +214,149 @@ class LogInView: UIViewController {
         invalid2.layer.add(animation, forKey: "position")
     }
     
+    func saveData(userName: String?, password: String?, path: String?) {
+        let docRef = database.document(path!)
+        let encoder = JSONEncoder()
+//        var user: Int?
+//        var pass: Int?
+//        if (try? encoder.encode(userName)) != nil {
+//            user = userName
+//        }
+//        if (try? encoder.encode(password)) != nil {
+//            pass = password
+//        }
+        let data: [String: Any] = [
+            "userName": userName!,
+            "location": GeoPoint(latitude: 0.0, longitude: 0.0),
+            "uid": "\(uid)",
+            "password": password!,
+            "alertNotification": false,
+            "contact-email": "",
+            "contact-phone": 0000000000
+        ]
+        docRef.setData(data)
+    }
 }
+
+extension UserDefaults {
+
+    func valueExists(forKey key: String) -> Bool {
+        return object(forKey: key) != nil
+    }
+
+}
+
+
+
+/**  Friebase Accoutn checker
+ var allow: Bool = false
+ var text = self.userNameField.text
+ let password = self.passwordField.text! //encodePassword(self.passwordField.text!)!
+ var type: String = ""
+ if((text?.contains(".com")) == false) {
+ type = "userName"
+ } else {
+ type = "email"
+ }
+ let usersCollection = self.database.collection("CarbonTrackr")
+ 
+ // Check if the user with the given UID exists in the database
+ usersCollection.whereField("\(type)", isEqualTo: text!).getDocuments { snapshot, error in
+ if let error = error {
+ print("Error checking user existence: \(error.localizedDescription)")
+ // Handle the error, such as showing an alert to the user
+ return
+ }
+ 
+ if let documents = snapshot?.documents, !documents.isEmpty {
+ // User exists in the database
+ usersCollection.whereField("pwd", isEqualTo: password).getDocuments { snapshot2, error in
+ if let documents = snapshot2?.documents, !documents.isEmpty {
+ print("User exists!")
+ allow = true
+ UIView.animate(
+ withDuration: 1,
+ delay: 0.0,
+ options: .curveEaseInOut,
+ animations: {
+ self.invalid1.isHidden = true
+ self.invalid2.isHidden = true
+ })
+ let vc = self.storyboard?.instantiateViewController(withIdentifier: "homeView")
+ self.navigationController?.pushViewController(vc!, animated: true)
+ } else {
+ allow = false
+ UIView.animate(
+ withDuration: 1,
+ delay: 0.0,
+ options: .curveEaseInOut,
+ animations: {
+ self.invalid1.isHidden = false
+ self.invalid2.isHidden = false
+ self.createVibrationAnimation()
+ })
+ }
+ }
+ 
+ 
+ // Perform any actions you want if the user exists, such as navigating to a different screen
+ } else {
+ // User does not exist in the database
+ print("User does not exist.")
+ allow = false
+ UIView.animate(
+ withDuration: 1,
+ delay: 0.0,
+ options: .curveEaseInOut,
+ animations: {
+ self.invalid1.isHidden = false
+ self.invalid2.isHidden = false
+ self.createVibrationAnimation()
+ })
+ // Perform any actions you want if the user does not exist, such as showing a sign-up screen
+ }
+ }
+ **/
+
+
+//    @IBAction func googleButtonPressed(_ sender: Any) {
+//        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+//        // Create Google Sign In configuration object.
+//        let config = GIDConfiguration(clientID: clientID)
+//        GIDSignIn.sharedInstance.configuration = config
+//        // Start the sign in flow!
+//        GIDSignIn.sharedInstance.signIn(withPresenting: self) { [unowned self] result, error in
+//            guard error == nil else {
+//                return
+//            }
+//            guard let user = result?.user,
+//                  let idToken = user.idToken?.tokenString
+//            else {
+//                return
+//            }
+//            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+//                                                           accessToken: user.accessToken.tokenString)
+//            // ...
+//            Auth.auth().signIn(with: credential) { result, error in
+//
+//            } // At this point, our user is signed in
+//
+//        }
+//    }
+    
+    //    func encodePassword(_ password: String) -> String? {
+    //        // Generate a random salt
+    //        var saltData = Data(count: 16)
+    //        let _ = saltData.withUnsafeMutableBytes { SecRandomCopyBytes(kSecRandomDefault, 16, $0.baseAddress!) }
+    //        // Convert password and salt to Data
+    //        guard let passwordData = password.data(using: .utf8) else {
+    //            return nil // Failed to convert password to data
+    //        }
+    //        // Combine the password and salt
+    //        let combinedData = passwordData + saltData
+    //        // Hash the combined data using SHA-256
+    //        let hashedData = SHA256.hash(data: combinedData)
+    //        // Convert the hashed data to a hexadecimal string
+    //        let hashedPassword = hashedData.compactMap { String(format: "%02x", $0) }.joined()
+    //        return hashedPassword
+    //    }

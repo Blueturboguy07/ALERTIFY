@@ -35,14 +35,13 @@ class ViewController: UIViewController {
         googleButton.layer.masksToBounds = true
         signInButton.layer.cornerRadius = 25
         signInButton.layer.masksToBounds = true
-        logo.isHidden = false
+        self.navigationController!.navigationBar.isHidden = true;
 
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
 //        print(defaults.bool(forKey: "launchScreenAnimation"))
-        if !defaults.bool(forKey: "launchScreenAnimation") {
+        if !defaults.bool(forKey: "launchScreenAnimationAlertify") {
             self.logo.alpha = 1.0
             self.logoDivider.alpha = 0.0
             self.getStartedButton.alpha = 0.0
@@ -105,18 +104,67 @@ class ViewController: UIViewController {
             
             UIView.animate(
                 withDuration: 0.4,
-                delay: 3.0,
+                delay: 0.2,
                 options: .curveEaseInOut,
                 animations: {
                     self.logoDivider.alpha = 1.0
                 })
-            defaults.set(true, forKey: "launchScreenAnimation")
+            defaults.set(true, forKey: "launchScreenAnimationAlertify")
+            
+//            if(defaults.valueExists(forKey: "uidAlertify")) {
+//                let blurEffect = UIBlurEffect(style: .light)
+//                let blurView = UIVisualEffectView(effect: blurEffect)
+//                blurView.frame = view.bounds
+//                view.addSubview(blurView)
+//                
+//                // Add your content on top of the blurred background
+//                let titleLabel = UILabel()
+//                titleLabel.text = "Loading..."
+//                titleLabel.textColor = .white
+//                titleLabel.font = UIFont.systemFont(ofSize: 24)
+//                titleLabel.sizeToFit()
+//                titleLabel.center = view.center
+//                view.addSubview(titleLabel)
+//                let collectionReference = database.collection("Alertify")
+//                let documentReference = collectionReference.document("\(defaults.string(forKey: "uidAlertify")!)") // Replace "did" with the actual document ID if it's not fixed
+//
+//                documentReference.getDocument { (document, error) in
+//                    if let error = error {
+//                        print("Error fetching document: \(error.localizedDescription)")
+//                        return
+//                    }
+//
+//                    if let document = document, document.exists {
+//                        // Document exists, now access the "studentID" field
+//                        if let uidData = document.data()?["uid"] as? String {
+//                            if(uidData.elementsEqual("\(defaults.string(forKey: "uidAlertify")!)")) {
+//                                uid = defaults.string(forKey: "uidAlertify")!
+//                                UIView.animate(
+//                                    withDuration: 0.5,
+//                                    delay: 1.0,
+//                                    options: .curveEaseInOut,
+//                                    animations: {
+//                                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "homeView")
+//                                        DispatchQueue.main.async {
+//                                            self.navigationController?.pushViewController(vc!, animated: true)
+//                                        }
+//                                    })
+//                                
+//                            } else {
+//                                blurView.removeFromSuperview()
+//                                titleLabel.removeFromSuperview()
+//                            }
+//                            // Use the studentID value as needed
+//                        }
+//                    } else {
+//                        print("Document does not exist")
+//                        blurView.removeFromSuperview()
+//                        titleLabel.removeFromSuperview()
+//                    }
+//                }
+//                
+//            }
         }
-    
-//    func saveData(email: String, userName: String, uid: String, pwd: String = "password", path: String = "CarbonTrackr/CarbonTrackr-user1") {
-//        let docRef = database.document(path)
-//        docRef.setData(["email": email, "userName": userName, "uid": uid, "pwd": pwd])
-//    }
     
 //    @IBAction func googleButtonPressed(_ sender: Any) {
 //        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
@@ -203,7 +251,7 @@ class ViewController: UIViewController {
 //                        // Perform any actions you want if the user does not exist, such as showing a sign-up screen
 //                    }
 //                }
-////                self.saveData(email: (result?.user.email)!, userName: displayName, uid: (result?.user.uid)!)
+//                self.saveData(email: (result?.user.email)!, userName: displayName, uid: (result?.user.uid)!)
 //            } // At this point, our user is signed in
 
 //       }

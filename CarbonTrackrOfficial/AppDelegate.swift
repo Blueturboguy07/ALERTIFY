@@ -11,8 +11,8 @@ import FirebaseAuth
 import GoogleSignIn
 
 let defaults = UserDefaults.standard
-var locationManager: CLLocationManager?
-
+var studentID = 00000
+var uid = "000000"
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,11 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         UINavigationBar.appearance().tintColor = UIColor(named: "red")
-        defaults.set(false, forKey: "launchScreenAnimation")
-        
-        locationManager = CLLocationManager()
-        locationManager?.requestWhenInUseAuthorization()
-        
+        defaults.set(false, forKey: "launchScreenAnimationAlertify")
         return true
     }
     

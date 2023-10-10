@@ -14,6 +14,7 @@
 		1374EDD12A7057E4003A2C6F /* CarbonTrackrOfficialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1374EDD02A7057E4003A2C6F /* CarbonTrackrOfficialUITests.swift */; };
 		1374EDD32A7057E4003A2C6F /* CarbonTrackrOfficialUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1374EDD22A7057E4003A2C6F /* CarbonTrackrOfficialUITestsLaunchTests.swift */; };
 		8D2772B92A7AC4D80013FE6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */; };
+		8D37A1992AC72499008F5E2E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D37A1982AC72498008F5E2E /* SettingsViewController.swift */; };
 		8D3E5C242A7E0FBA00E466E4 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C232A7E0FBA00E466E4 /* FirebaseAnalytics */; };
 		8D3E5C262A7E0FBA00E466E4 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C252A7E0FBA00E466E4 /* FirebaseAnalyticsSwift */; };
 		8D3E5C292A7E1C9300E466E4 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3E5C282A7E1C9300E466E4 /* GoogleSignIn */; };
@@ -25,7 +26,7 @@
 		8D9D01552A73315000223224 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D01542A73315000223224 /* ViewController.swift */; };
 		8D9D01572A73316600223224 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9D01562A73316600223224 /* LogInView.swift */; };
 		8DB4F5172A8DD66E000EF8CC /* HomeViewContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB4F5162A8DD66E000EF8CC /* HomeViewContorller.swift */; };
-		8DBD30DB2A82CBE300F165CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DBD30DA2A82CBE300F165CA /* GoogleService-Info.plist */; };
+		8DC45E8A2AC3C94B004B9ED0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DC45E892AC3C94B004B9ED0 /* GoogleService-Info.plist */; };
 		BDCF10AE2AB63C7500266586 /* MapControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCF10AD2AB63C7500266586 /* MapControllerViewController.swift */; };
 		BDD82A112A85B0EC00E60C70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDD82A102A85B0EC00E60C70 /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -59,10 +60,11 @@
 		1374EDD02A7057E4003A2C6F /* CarbonTrackrOfficialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonTrackrOfficialUITests.swift; sourceTree = "<group>"; };
 		1374EDD22A7057E4003A2C6F /* CarbonTrackrOfficialUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbonTrackrOfficialUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8D37A1982AC72498008F5E2E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8D9D01542A73315000223224 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8D9D01562A73316600223224 /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		8DB4F5162A8DD66E000EF8CC /* HomeViewContorller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewContorller.swift; sourceTree = "<group>"; };
-		8DBD30DA2A82CBE300F165CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8DC45E892AC3C94B004B9ED0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BDCF10AD2AB63C7500266586 /* MapControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapControllerViewController.swift; sourceTree = "<group>"; };
 		BDD82A102A85B0EC00E60C70 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,12 +131,13 @@
 				8D9D01542A73315000223224 /* ViewController.swift */,
 				8DB4F5162A8DD66E000EF8CC /* HomeViewContorller.swift */,
 				BDD82A102A85B0EC00E60C70 /* Main.storyboard */,
+				8D37A1982AC72498008F5E2E /* SettingsViewController.swift */,
 				8D9D01562A73316600223224 /* LogInView.swift */,
 				BDCF10AD2AB63C7500266586 /* MapControllerViewController.swift */,
 				8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */,
 				1374EDB82A7057E4003A2C6F /* Assets.xcassets */,
 				1374EDBD2A7057E4003A2C6F /* Info.plist */,
-				8DBD30DA2A82CBE300F165CA /* GoogleService-Info.plist */,
+				8DC45E892AC3C94B004B9ED0 /* GoogleService-Info.plist */,
 			);
 			path = CarbonTrackrOfficial;
 			sourceTree = "<group>";
@@ -282,9 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D2772B92A7AC4D80013FE6D /* LaunchScreen.storyboard in Resources */,
+				8DC45E8A2AC3C94B004B9ED0 /* GoogleService-Info.plist in Resources */,
 				BDD82A112A85B0EC00E60C70 /* Main.storyboard in Resources */,
 				1374EDB92A7057E4003A2C6F /* Assets.xcassets in Resources */,
-				8DBD30DB2A82CBE300F165CA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +314,7 @@
 			files = (
 				8D9D01572A73316600223224 /* LogInView.swift in Sources */,
 				1374EDB02A7057E2003A2C6F /* AppDelegate.swift in Sources */,
+				8D37A1992AC72499008F5E2E /* SettingsViewController.swift in Sources */,
 				8DB4F5172A8DD66E000EF8CC /* HomeViewContorller.swift in Sources */,
 				8D9D01552A73315000223224 /* ViewController.swift in Sources */,
 				1374EDB22A7057E2003A2C6F /* SceneDelegate.swift in Sources */,
@@ -402,7 +406,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -457,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -477,6 +481,8 @@
 				DEVELOPMENT_TEAM = HN2D6RX76W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CarbonTrackrOfficial/Info.plist;
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This location is required to share your secret location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -487,7 +493,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Sathvik-Mann.CarbonTrackr";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sathvik-Mann.Alertify";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -505,6 +511,8 @@
 				DEVELOPMENT_TEAM = HN2D6RX76W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CarbonTrackrOfficial/Info.plist;
+				INFOPLIST_KEY_NSFileProviderDomainUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This location is required to share your secret location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -515,7 +523,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Sathvik-Mann.CarbonTrackr";
+				PRODUCT_BUNDLE_IDENTIFIER = "Sathvik-Mann.Alertify";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
