@@ -54,7 +54,7 @@ class ViewController: UIViewController {
             self.logo2.alpha = 0.0
             
             UIView.animate(
-                withDuration: 0.7,
+                withDuration: 0.9,
                 delay: 0,
                 options: .curveEaseInOut,
                 animations: {

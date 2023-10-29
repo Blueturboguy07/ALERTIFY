@@ -14,6 +14,7 @@ import FirebaseFirestore
 import CryptoKit
 import MapKit
 
+
 struct StudentInfo: Codable {
     let birthdate: String
     let campus: String
@@ -40,9 +41,16 @@ class LogInView: UIViewController {
 
     
     let database = Firestore.firestore()
+    var accCreated = false
+    var phoneList: Array<String>?
+    var emailList: Array<String>?
+    var createdUser: String?
+    var createdPass: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController!.navigationBar.isHidden = false
         
         logInButton.layer.cornerRadius = 25
         logInButton.layer.masksToBounds = true
@@ -63,6 +71,9 @@ class LogInView: UIViewController {
         passwordField.isSecureTextEntry = true
         passwordField.placeholder = "MMDDYYYY"
         
+        userNameField.text = "284024"
+        passwordField.text = "05122007"
+        
         userNameField.layer.cornerRadius = 10
         userNameField.layer.masksToBounds = true
         userNameField.textColor = UIColor.black
@@ -79,6 +90,10 @@ class LogInView: UIViewController {
         circularActivityIndicator.startAnimating()
         loggingIn.isHidden = true
         
+        if(accCreated) {
+            userNameField.text = createdUser
+            passwordField.text = createdPass
+        }
     }
     
     func startLoading() {
@@ -101,14 +116,18 @@ class LogInView: UIViewController {
         startLoading()
         var text = self.userNameField.text!
         let password = self.passwordField.text!
-        
+        logIn(text: text, password: password)
+    }
+
+    func logIn(text: String?, password: String!) {
+        let getStarted = self.storyboard?.instantiateViewController(withIdentifier: "getStartedView") as? GetStartedViewController
         var components = URLComponents()
         components.scheme = "https"
         components.host = "friscoisdhacapi.vercel.app"
         components.path = "/api/info"
         components.queryItems = [
-            URLQueryItem(name: "username", value: text),
-            URLQueryItem(name: "password", value: password)
+            URLQueryItem(name: "username", value: text!),
+            URLQueryItem(name: "password", value: password!)
         ]
         
         if let url = components.url {
@@ -121,6 +140,10 @@ class LogInView: UIViewController {
                         self.invalid1.isHidden = false
                         self.invalid2.isHidden = false
                         self.createVibrationAnimation()
+                        if(self.accCreated) {
+                            self.navigationController?.pushViewController(getStarted!, animated: true)
+                            getStarted!.error2IsHidden = false
+                        }
                     }
                     return
                 }
@@ -138,6 +161,10 @@ class LogInView: UIViewController {
                         self.invalid1.isHidden = false
                         self.invalid2.isHidden = false
                         self.createVibrationAnimation()
+                        if(self.accCreated) {
+                            self.navigationController?.pushViewController(getStarted!, animated: true)
+                            getStarted!.error2IsHidden = false
+                        }
                     }
                     return
                 }
@@ -150,12 +177,33 @@ class LogInView: UIViewController {
                     if(defaults.valueExists(forKey: "uidAlertify") && defaults.string(forKey: "uidAlertify")?.count == 12) {
                         uid = defaults.string(forKey: "uidAlertify")!
                     } else {
-                        uid = generateUserID()
-                        defaults.set(uid, forKey: "uidAlertify")
+                        let collectionReference = Firestore.firestore().collection("Alertify") // Replace "YourCollectionName" with the actual name of your collection
+                        let query = collectionReference.whereField("userName", isEqualTo: text) // Replace "fieldName" and "desiredValue" with the field name and value you're looking for
+
+                        query.getDocuments { (querySnapshot, error) in
+                            if let error = error {
+                                print("Error getting documents: \(error)")
+                            } else {
+                                for document in querySnapshot!.documents {
+                                    // Access the document data
+                                    let documentData = document.data()
+                                    
+                                    // Access specific fields
+                                    if let fieldValue = documentData["userName"] as? String {
+                                        // Do something with the matching document
+                                        uid = documentData["uid"] as! String
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if(accCreated) {
+                        setData(userName: text, password: password, contactPhone: phoneList!, contactEmail: emailList!)
+                    } else {
+                        saveData(userName: text, password: password)
                     }
                     let databasePath = "Alertify/\(uid)"
                     let vc = self.storyboard?.instantiateViewController(withIdentifier: "homeView") as? HomeViewContorller
-                    saveData(userName: text, password: password, path: databasePath)
                     DispatchQueue.main.async {
                         self.navigationController?.pushViewController(vc!, animated: true)
                         self.stopLoading()
@@ -166,12 +214,62 @@ class LogInView: UIViewController {
                         self.invalid1.isHidden = false
                         self.invalid2.isHidden = false
                         self.createVibrationAnimation()
+                        if(self.accCreated) {
+                            self.navigationController?.pushViewController(getStarted!, animated: true)
+                            getStarted!.error2IsHidden = false
+                        }
                     }
                 }
             }
             task.resume()
         }
     }
+    
+    func setData(userName: String?, password: String?, contactPhone: Array<String>, contactEmail: Array<String>, path: String = "Alertify/\(uid)") {
+        let docRef = database.document(path)
+        let encoder = JSONEncoder()
+//        var user: Int?
+//        var pass: Int?
+//        if (try? encoder.encode(userName)) != nil {
+//            user = userName
+//        }
+//        if (try? encoder.encode(password)) != nil {
+//            pass = password
+//        }
+        let data: [String: Any] = [
+            "userName": userName!,
+            "location": GeoPoint(latitude: 0.0, longitude: 0.0),
+            "uid": "\(uid)",
+            "password": password!,
+            "alertNotification": false,
+            "contactEmail": contactEmail,
+            "contactPhone": contactPhone
+        ]
+        docRef.setData(data)
+    }
+    
+    func saveData(userName: String?, password: String?, path: String = "Alertify/\(uid)") {
+        let docRef = database.document(path)
+        let encoder = JSONEncoder()
+//        var user: Int?
+//        var pass: Int?
+//        if (try? encoder.encode(userName)) != nil {
+//            user = userName
+//        }
+//        if (try? encoder.encode(password)) != nil {
+//            pass = password
+//        }
+        let data: [String: Any] = [
+            "userName": userName!,
+            "location": GeoPoint(latitude: 0.0, longitude: 0.0),
+            "uid": "\(uid)",
+            "password": password!,
+            "alertNotification": false,
+        ]
+        docRef.updateData(data)
+    }
+    
+    
     
     func generateUserID() -> String {
         let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+"
@@ -212,29 +310,6 @@ class LogInView: UIViewController {
         animation.fromValue = NSValue(cgPoint: CGPoint(x: invalid2.center.x - 5, y: invalid2.center.y))
         animation.toValue = NSValue(cgPoint: CGPoint(x: invalid2.center.x + 5, y: invalid2.center.y))
         invalid2.layer.add(animation, forKey: "position")
-    }
-    
-    func saveData(userName: String?, password: String?, path: String?) {
-        let docRef = database.document(path!)
-        let encoder = JSONEncoder()
-//        var user: Int?
-//        var pass: Int?
-//        if (try? encoder.encode(userName)) != nil {
-//            user = userName
-//        }
-//        if (try? encoder.encode(password)) != nil {
-//            pass = password
-//        }
-        let data: [String: Any] = [
-            "userName": userName!,
-            "location": GeoPoint(latitude: 0.0, longitude: 0.0),
-            "uid": "\(uid)",
-            "password": password!,
-            "alertNotification": false,
-            "contact-email": "",
-            "contact-phone": 0000000000
-        ]
-        docRef.setData(data)
     }
 }
 

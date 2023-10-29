@@ -22,10 +22,23 @@ class MapControllerViewController: UIViewController, MKMapViewDelegate, CLLocati
         super.viewDidLoad()
         locationManager = CLLocationManager()
         self.navigationController!.navigationBar.isHidden = false;
-        map.delegate = self
+        self.map.delegate = self
         map.showsUserLocation = true
         locationManager?.delegate = self
         locationManager?.requestWhenInUseAuthorization()
+        
+        
+        let historyPath = "Alertify/alertHistory"
+        let historyDocument = database.document(historyPath)
+//        
+//        
+//        
+//        let annotation = MKPointAnnotation()
+//        annotation.coordinate = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194) // Replace with your desired coordinates
+//        annotation.subtitle = ""
+//        
+//        // Add the annotation to the map view
+//        map.addAnnotation(annotation)
         // Do any additional setup after loading the view.
     }
     @IBAction func zoomIn(_ sender: Any) {
@@ -39,29 +52,23 @@ class MapControllerViewController: UIViewController, MKMapViewDelegate, CLLocati
         map.setRegion(region, animated: true)
     }
     
-    @IBAction func changeMapType(_ sender: Any) {
-        print("Button clicked") // Check if the button click is being registered
-        switch map.mapType {
-        case .standard:
-            map.mapType = .satellite
-            print("Switched to satellite")
-        case .hybrid:
-            map.mapType = .standard
-            print("Switched to standard")
-        case .satellite:
-            map.mapType = .hybrid
-            print("Switched to hybrid")
-        default:
-            print("Stupid")
-        }
-    }
-    
     func saveData(location: GeoPoint?, path: String) {
         let docRef = database.document(path)
         let data: [String: Any] = [
-            "location": location!,
+            "location": location!
         ]
-        docRef.setData(data)
+        
+        docRef.updateData(data) { (error) in
+            if let error = error {
+                print("Error updating document: \(error)")
+            }
+        }
+    }
+    
+    func getAndSetLocations() -> [MKCoordinateRegion] {
+        var locations: [MKCoordinateRegion]?
+        
+        return locations!
     }
     
     func convertToGeoPoint(region: MKCoordinateRegion) -> GeoPoint {
