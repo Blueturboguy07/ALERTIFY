@@ -56,6 +56,10 @@ class HomeViewContorller: UIViewController, MKMapViewDelegate, CLLocationManager
         spotlight.layer.cornerRadius = 80
         spotlight.layer.masksToBounds = true
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(schoolExitImageViewTapped))
+        schoolExitImage.isUserInteractionEnabled = true
+        schoolExitImage.addGestureRecognizer(tapGesture)
+        
         let gradientLayerLeft = CAGradientLayer()
         let gradientLayerRight = CAGradientLayer()
         let gradientLayerUp = CAGradientLayer()
@@ -108,7 +112,7 @@ class HomeViewContorller: UIViewController, MKMapViewDelegate, CLLocationManager
         } else if((self.school!.range(of: "Wakeland")) != nil) {
             self.schoolImg.image = UIImage(named: "Wakeland")
             schoolExitImage.image = UIImage(named: "WakelandZoomExits")
-            schoolImageWhileAlert.image = UIImage(named: "WakelandExits")
+            schoolImageWhileAlert.image = UIImage(named: "WakelandZoomExits")
         } else if((self.school!.range(of: "Cent")) != nil) {
             self.schoolImg.image = UIImage(named: "Centennial")
         } else if((self.school!.range(of: "Emerson")) != nil) {
@@ -253,8 +257,8 @@ class HomeViewContorller: UIViewController, MKMapViewDelegate, CLLocationManager
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year, .month, .day], from: currentDate)
         
-        let historyPath = "Alertify/alertHistory"
-        let historyDocument = database.document(historyPath)
+        let historyPath = "Alertify/alertHistory/alerts"
+        let historyCollection = database.collection(historyPath)
         let timestamp = Timestamp(date: currentDate)
         let currentData: [String: Any] = [
             "alert": true,
@@ -274,9 +278,8 @@ class HomeViewContorller: UIViewController, MKMapViewDelegate, CLLocationManager
                 } else {
                     print("Data written to current document successfully.")
                 }
-            }
-            let newCollection = historyDocument.collection("\(components.year ?? 0)_\(components.month ?? 0)_\(components.day ?? 0)") // Replace with the desired collection name
-            let newDocument = newCollection.addDocument(data: historyData) { error in
+            } // Replace with the desired collection name
+            let newDocument = historyCollection.addDocument(data: historyData) { error in
                 if let error = error {
                     print("Error writing data to the new document: \(error)")
                 } else {
@@ -364,6 +367,36 @@ class HomeViewContorller: UIViewController, MKMapViewDelegate, CLLocationManager
     }
     
     @IBAction func schoolMapView(_ sender: Any) {
+        self.schoolImageBlurView.frame = self.mainView.frame
+        self.mainView.addSubview(self.schoolImageBlurView)
+        self.schoolExitAlertView.isHidden = false
+        schoolImageScrollView.contentSize = schoolImageWhileAlert.bounds.size
+        schoolImageScrollView.delegate = self
+        schoolImageScrollView.contentOffset = CGPoint(x:0, y:0)
+        schoolImageScrollView.minimumZoomScale = 0.5 //smallest zoom
+        schoolImageScrollView.maximumZoomScale = 10.0 //biggest zoom
+        schoolImageScrollView.zoomScale = 1.0 //starting zoom
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0,
+            options: .curveEaseInOut,
+            animations: {
+                self.schoolExitAlertView.alpha = 1.0
+                self.schoolImageBlurView.alpha = 1.0
+            }
+        )
+        UIView.animate(
+            withDuration: 0.8,
+            delay: 0,
+            options: .curveEaseInOut,
+            animations: {
+                self.schoolImageWhileAlert.alpha = 1.0
+                self.mainView.bringSubviewToFront(self.schoolExitAlertView)
+            }
+        )
+    }
+    
+    @objc func schoolExitImageViewTapped() {
         self.schoolImageBlurView.frame = self.mainView.frame
         self.mainView.addSubview(self.schoolImageBlurView)
         self.schoolExitAlertView.isHidden = false
