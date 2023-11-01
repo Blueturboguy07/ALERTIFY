@@ -77,6 +77,18 @@
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "TWILIO_ACCCOUNT_SID"
+            value = "AC68c9838d429f1f17dc2d2f4ec1f5a403"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "TWILIO_AUTH_TOKEN"
+            value = "9d993eb9731f7d307a033ff06d5a3986"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

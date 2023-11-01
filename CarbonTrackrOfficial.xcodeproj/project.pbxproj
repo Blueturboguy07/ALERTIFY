@@ -13,7 +13,10 @@
 		1374EDC72A7057E4003A2C6F /* CarbonTrackrOfficialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1374EDC62A7057E4003A2C6F /* CarbonTrackrOfficialTests.swift */; };
 		1374EDD12A7057E4003A2C6F /* CarbonTrackrOfficialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1374EDD02A7057E4003A2C6F /* CarbonTrackrOfficialUITests.swift */; };
 		1374EDD32A7057E4003A2C6F /* CarbonTrackrOfficialUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1374EDD22A7057E4003A2C6F /* CarbonTrackrOfficialUITestsLaunchTests.swift */; };
+		8D1F4BDF2AF1F3D300D19EC9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8D1F4BDE2AF1F3D300D19EC9 /* Alamofire */; };
 		8D2772B92A7AC4D80013FE6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D2772B82A7AC4D70013FE6D /* LaunchScreen.storyboard */; };
+		8D33F1432AF0C4080028AFA2 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8D33F1422AF0C4080028AFA2 /* FirebaseMessaging */; };
+		8D33F1452AF0C4500028AFA2 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8D33F1442AF0C4500028AFA2 /* FirebaseMessaging */; };
 		8D37A1992AC72499008F5E2E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D37A1982AC72498008F5E2E /* SettingsViewController.swift */; };
 		8D549D0A2AD9A3840084B682 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D549D092AD9A3840084B682 /* GetStartedViewController.swift */; };
 		8D9B6A502AE0E6C9007D907F /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9B6A4F2AE0E6C9007D907F /* FetchData.swift */; };
@@ -79,13 +82,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D33F1432AF0C4080028AFA2 /* FirebaseMessaging in Frameworks */,
 				8DC691C42AEC8E120065CF1C /* GoogleSignInSwift in Frameworks */,
 				8DC691B62AEC8DFC0065CF1C /* FirebaseAnalyticsSwift in Frameworks */,
 				8DC691C22AEC8E120065CF1C /* GoogleSignIn in Frameworks */,
 				8DC691B82AEC8DFC0065CF1C /* FirebaseAuth in Frameworks */,
 				8DC691BA2AEC8DFC0065CF1C /* FirebaseDatabase in Frameworks */,
 				8DC691BC2AEC8DFC0065CF1C /* FirebaseFirestore in Frameworks */,
+				8D33F1452AF0C4500028AFA2 /* FirebaseMessaging in Frameworks */,
 				8DC691C02AEC8DFC0065CF1C /* FirebaseStorage in Frameworks */,
+				8D1F4BDF2AF1F3D300D19EC9 /* Alamofire in Frameworks */,
 				8DC691B42AEC8DFC0065CF1C /* FirebaseAnalytics in Frameworks */,
 				8DC691BE2AEC8DFC0065CF1C /* FirebaseFirestoreSwift in Frameworks */,
 			);
@@ -115,7 +121,6 @@
 				1374EDC52A7057E4003A2C6F /* CarbonTrackrOfficialTests */,
 				1374EDCF2A7057E4003A2C6F /* CarbonTrackrOfficialUITests */,
 				1374EDAD2A7057E2003A2C6F /* Products */,
-				8D3E5C2C2A7E21C300E466E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,13 +172,6 @@
 			path = CarbonTrackrOfficialUITests;
 			sourceTree = "<group>";
 		};
-		8D3E5C2C2A7E21C300E466E4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,6 +198,9 @@
 				8DC691BF2AEC8DFC0065CF1C /* FirebaseStorage */,
 				8DC691C12AEC8E120065CF1C /* GoogleSignIn */,
 				8DC691C32AEC8E120065CF1C /* GoogleSignInSwift */,
+				8D33F1422AF0C4080028AFA2 /* FirebaseMessaging */,
+				8D33F1442AF0C4500028AFA2 /* FirebaseMessaging */,
+				8D1F4BDE2AF1F3D300D19EC9 /* Alamofire */,
 			);
 			productName = CarbonTrackrOfficial;
 			productReference = 1374EDAC2A7057E2003A2C6F /* CarbonTrackrOfficial.app */;
@@ -276,6 +277,8 @@
 			packageReferences = (
 				8D3E5C222A7E0FB900E466E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8D3E5C272A7E1C9300E466E4 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				8D7125C42AEF838500CEAC1A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8D1F4BD92AF1ECF000D19EC9 /* XCRemoteSwiftPackageReference "twilio-chat-ios" */,
 			);
 			productRefGroup = 1374EDAD2A7057E2003A2C6F /* Products */;
 			projectDirPath = "";
@@ -662,6 +665,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8D1F4BD92AF1ECF000D19EC9 /* XCRemoteSwiftPackageReference "twilio-chat-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twilio/twilio-chat-ios";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		8D3E5C222A7E0FB900E466E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -678,9 +689,30 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		8D7125C42AEF838500CEAC1A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8D1F4BDE2AF1F3D300D19EC9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D7125C42AEF838500CEAC1A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		8D33F1422AF0C4080028AFA2 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseMessaging;
+		};
+		8D33F1442AF0C4500028AFA2 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseMessaging;
+		};
 		8DC691B32AEC8DFC0065CF1C /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8D3E5C222A7E0FB900E466E4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

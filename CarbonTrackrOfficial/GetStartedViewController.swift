@@ -14,6 +14,8 @@ import FirebaseFirestore
 import CryptoKit
 import MapKit
 
+var phoneList = Array<String>()
+var emailArray = Array<String>()
 
 class GetStartedViewController: UIViewController {
 
@@ -31,9 +33,7 @@ class GetStartedViewController: UIViewController {
     @IBOutlet weak var circularActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
-    
-    var phoneList = Array<String>()
-    var emailArray = Array<String>()
+
     var checkPhone = false
     var checkEmail = false
     let database = Firestore.firestore()
@@ -72,10 +72,10 @@ class GetStartedViewController: UIViewController {
                 label.font = UIFont(name: "Helvetica Neue Light Italic", size: 15)
                 if(!self.checkEmail) {
                     self.emailList.text = inputEmail
-                    self.emailArray = [inputEmail!]
+                    emailArray = [inputEmail!]
                     self.checkEmail = true
                 } else {
-                    self.emailArray.append(inputEmail!)
+                    emailArray.append(inputEmail!)
                     label.text = inputEmail
                     self.emailStack.addArrangedSubview(label)
                 }
@@ -105,10 +105,10 @@ class GetStartedViewController: UIViewController {
                 label.font = UIFont(name: "Helvetica Neue Light Italic", size: 15)
                 if(!self.checkPhone) {
                     self.phoneNumberList.text = inputNumber
-                    self.phoneList = [inputNumber!]
+                    phoneList = [inputNumber!]
                     self.checkPhone = true
                 } else {
-                    self.phoneList.append(inputNumber!)
+                    phoneList.append(inputNumber!)
                     label.text = inputNumber
                     self.phoneStack.addArrangedSubview(label)
                 }

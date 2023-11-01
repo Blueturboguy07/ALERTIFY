@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire",
+      "state" : {
+        "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+        "version" : "5.8.1"
+      }
+    },
+    {
       "identity" : "appauth-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/openid/AppAuth-iOS.git",
@@ -124,6 +133,15 @@
       "state" : {
         "revision" : "ce20dc083ee485524b802669890291c0d8090170",
         "version" : "1.22.1"
+      }
+    },
+    {
+      "identity" : "twilio-chat-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/twilio/twilio-chat-ios",
+      "state" : {
+        "branch" : "master",
+        "revision" : "6696abf4fd5a1fda641c1fc4cb24a90983f1f545"
       }
     }
   ],

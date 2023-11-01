@@ -9,6 +9,7 @@ import UIKit
 import FirebaseCore
 import FirebaseAuth
 import GoogleSignIn
+import Firebase
 
 let defaults = UserDefaults.standard
 var studentID = 00000
@@ -48,7 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         defaults.removeObject(forKey: "launchScreenAnimation")
     }
-
 
 }
 
