@@ -71,9 +71,6 @@ class LogInView: UIViewController {
         passwordField.isSecureTextEntry = true
         passwordField.placeholder = "MMDDYYYY"
         
-        userNameField.text = "284024"
-        passwordField.text = "05122007"
-        
         userNameField.layer.cornerRadius = 10
         userNameField.layer.masksToBounds = true
         userNameField.textColor = UIColor.black
